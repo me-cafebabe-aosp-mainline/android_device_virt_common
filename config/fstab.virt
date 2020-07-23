@@ -13,3 +13,5 @@ vendor_dlkm /vendor_dlkm ext4 noatime,ro wait,logical,first_stage_mount
 
 /dev/block/by-name/sdcard /sdcard vfat defaults recoveryonly
 /devices/*/usb* auto auto defaults voldmanaged=usb:auto
+
+shared /mnt/vendor/shared virtiofs nosuid,nodev,noatime nofail
