@@ -1,0 +1,15 @@
+/dev/block/by-name/metadata /metadata f2fs nodev,noatime,nosuid wait,check,formattable,first_stage_mount
+/dev/block/by-name/userdata /data f2fs nodev,noatime,nosuid,reserve_root=32768 latemount,wait,check,quota,formattable,fscompress,checkpoint=fs
+/dev/block/by-name/userdata /data ext4 nodev,noatime,nosuid latemount,wait,check,quota,formattable,checkpoint=block
+
+odm /odm ext4 noatime,ro wait,logical,first_stage_mount
+product /product ext4 noatime,ro wait,logical,first_stage_mount
+system /system ext4 noatime,ro wait,logical,first_stage_mount
+system_ext /system_ext ext4 noatime,ro wait,logical,first_stage_mount
+vendor /vendor ext4 noatime,ro wait,logical,first_stage_mount
+
+system_dlkm /system_dlkm ext4 noatime,ro wait,logical,first_stage_mount
+vendor_dlkm /vendor_dlkm ext4 noatime,ro wait,logical,first_stage_mount
+
+/dev/block/by-name/sdcard /sdcard vfat defaults recoveryonly
+/devices/*/usb* auto auto defaults voldmanaged=usb:auto
