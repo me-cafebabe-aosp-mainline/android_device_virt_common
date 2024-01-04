@@ -20,7 +20,6 @@ TARGET_USERIMAGES_USE_EXT4 := true
 
 # Kernel
 include device/generic/shared/board_config/cmdline/common.mk
-BOARD_BOOT_HEADER_VERSION := 3
 BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
 BOARD_KERNEL_CMDLINE += \
     androidboot.boot_devices=any \
@@ -55,6 +54,7 @@ include device/generic/shared/board_config/dynamic_partitions/inode_count.mk
 include device/generic/shared/board_config/dynamic_partitions/reserved_size/small.mk
 
 # Ramdisk
+BOARD_COMBINE_RAMDISK_IMAGES := true
 BOARD_RAMDISK_USE_LZ4 := true
 
 # Recovery
