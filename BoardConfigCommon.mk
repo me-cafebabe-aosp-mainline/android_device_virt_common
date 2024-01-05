@@ -7,6 +7,13 @@
 USES_DEVICE_VIRT_COMMON := true
 COMMON_PATH := device/virt/common
 
+# Bootconfig
+BOARD_BOOTCONFIG += \
+    androidboot.boot_devices=any \
+    androidboot.fstab_suffix=virt \
+    androidboot.selinux=permissive \
+    androidboot.verifiedbootstate=orange
+
 # Bootloader
 TARGET_NO_BOOTLOADER := true
 
@@ -21,11 +28,6 @@ TARGET_USERIMAGES_USE_EXT4 := true
 # Kernel
 include device/generic/shared/board_config/cmdline/common.mk
 BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
-BOARD_KERNEL_CMDLINE += \
-    androidboot.boot_devices=any \
-    androidboot.fstab_suffix=virt \
-    androidboot.selinux=permissive \
-    androidboot.verifiedbootstate=orange
 TARGET_NO_KERNEL ?= true
 
 # OTA
