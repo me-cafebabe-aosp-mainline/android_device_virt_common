@@ -10,6 +10,10 @@ PRODUCT_AAPT_PREF_CONFIG := mdpi
 # APEX
 $(call inherit-product, $(SRC_TARGET_DIR)/product/updatable_apex.mk)
 
+# Console
+$(call inherit-product, device/generic/shared/features/first_stage_console/first_stage_console.mk)
+$(call inherit-product, device/generic/shared/features/serial_console_as_root/serial_console_as_root.mk)
+
 # Dalvik heap
 $(call inherit-product, frameworks/native/build/tablet-10in-xhdpi-2048-dalvik-heap.mk)
 
@@ -71,9 +75,6 @@ PRODUCT_COPY_FILES += \
 
 # Scoped Storage
 $(call inherit-product, $(SRC_TARGET_DIR)/product/emulated_storage.mk)
-
-# Serial console
-$(call inherit-product, device/generic/shared/features/serial_console_as_root/serial_console_as_root.mk)
 
 # Shipping API level
 PRODUCT_SHIPPING_API_LEVEL := 34
